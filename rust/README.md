@@ -19,6 +19,6 @@ fn main() {
 }
 ```
 
-here you are comparing the (instiatied beforehand) variables — `guess`, and `secret_number` — to each other, and then feeding that result into the `match` expression.
+here you are comparing the variables — `guess`, and `secret_number` — to each other, and then feeding that result into the `match` expression.
 
 `match` expressions are made up of **arms**, each of which has a **pattern**. the `match` statement takes the value given to it and looks through each arm. Should the arm's pattern be met, for example: `Ordering::Less`, the expression of code following the `=>` will be executed.
