@@ -1,18 +1,17 @@
 # Matches
 
-Example taken from the RustLang Book [Example](https://doc.rust-lang.org/book/ch02-00-guessing-game-tutorial.html)
+Example adapted from the RustLang Book [Example](https://doc.rust-lang.org/book/ch02-00-guessing-game-tutorial.html)
 
 ```rust
 use rand::Rng;
 use std::cmp::Ordering;
-use std::io;
 
 fn main() {
-    // --snip--
+    
+    let secret_number = rand::thread_rng().gen_range(1..101); // random number between 1-100
+    let small_number = 3
 
-    println!("You guessed: {}", guess);
-
-    match guess.cmp(&secret_number) {
+    match small_number.cmp(&random_number) {
         Ordering::Less => println!("Too small!"),
         Ordering::Greater => println!("Too big!"),
         Ordering::Equal => println!("You win!"),
