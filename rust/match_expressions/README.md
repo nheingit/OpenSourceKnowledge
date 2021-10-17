@@ -1,17 +1,17 @@
 # Matches
 
+Example adapted from the RustLang Book [Example](https://doc.rust-lang.org/book/ch02-00-guessing-game-tutorial.html)
+
 ```rust
-//Taken from the RustLang Book [Example](https://doc.rust-lang.org/book/ch02-00-guessing-game-tutorial.html)
 use rand::Rng;
 use std::cmp::Ordering;
-use std::io;
 
 fn main() {
-    // --snip--
+    
+    let secret_number = rand::thread_rng().gen_range(1..101); // random number between 1-100
+    let small_number = 3
 
-    println!("You guessed: {}", guess);
-
-    match guess.cmp(&secret_number) {
+    match small_number.cmp(&random_number) {
         Ordering::Less => println!("Too small!"),
         Ordering::Greater => println!("Too big!"),
         Ordering::Equal => println!("You win!"),
@@ -19,6 +19,6 @@ fn main() {
 }
 ```
 
-here you are comparing the (instiatied beforehand) variables — `guess`, and `secret_number` — to each other, and then feeding that result into the `match` expression.
+here you are comparing the variables — `guess`, and `secret_number` — to each other, and then feeding that result into the `match` expression.
 
 `match` expressions are made up of **arms**, each of which has a **pattern**. the `match` statement takes the value given to it and looks through each arm. Should the arm's pattern be met, for example: `Ordering::Less`, the expression of code following the `=>` will be executed.
